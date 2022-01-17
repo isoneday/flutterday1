@@ -46,43 +46,109 @@ class _HomePageState extends State<HomePage> {
         ),
         shadowColor: Colors.red,
         title: const Text(
-          "Halaman Home",
+          "INATECHNO",
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Nama: ",
-                style: TextStyle(fontSize: 25, fontStyle: FontStyle.italic),
+      body: SingleChildScrollView(
+        child: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 30,
+            ),
+            // Image.asset(
+            //   "assets/gambar/logoina.png",
+            //   color: Colors.red,
+            //   width: 300,
+            //   height: 300,
+            // ),
+            Image.network(
+              "https://www.gamelab.id/uploads/modules/NEWS/671/maxresdefault.jpg?1618217239336",
+              height: 200,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Text(
+                "Flutter Basic",
+                style: TextStyle(
+                    fontSize: 35,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "batmfo__"),
               ),
-              Text(
-                "Iswandi",
-                style: TextStyle(fontSize: 25, fontStyle: FontStyle.italic),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 30, right: 30),
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(hintText: "input email anda"),
               ),
-            ],
-          ),
-          //bari ke 2
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Kota: ",
-                style: TextStyle(fontSize: 25, fontStyle: FontStyle.italic),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 30, right: 30),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                obscureText: true,
+                decoration: InputDecoration(hintText: "input password anda"),
               ),
-              Text(
-                "Padang",
-                style: TextStyle(fontSize: 25, fontStyle: FontStyle.italic),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 30, right: 30),
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(hintText: "input email anda"),
               ),
-            ],
-          ),
-        ],
-      )),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 30, right: 30),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                obscureText: true,
+                decoration: InputDecoration(hintText: "input password anda"),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                  height: 50,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        // side: const BorderSide(
+                        //     color: Colors.blue, width: 8)
+                      ))),
+                      onPressed: () {},
+                      child: Text("OK"))),
+            )
+          ],
+        )),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+        onPressed: () {
+          print("klik FAB");
+        },
+      ),
     );
   }
 }

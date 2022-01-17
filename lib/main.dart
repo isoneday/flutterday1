@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_flutterapp/splashscreen_page.dart';
 
 import 'home_page.dart';
 
@@ -14,10 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         // primaryColor: Colors.yellow,
-        primarySwatch: Colors.yellow,
+        primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const SplashScreenPage(),
     );
   }
 }
