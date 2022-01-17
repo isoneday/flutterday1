@@ -67,6 +67,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+          //bari ke 2
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
