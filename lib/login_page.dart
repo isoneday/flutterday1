@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_flutterapp/beranda_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _LoginPageState extends State<LoginPage> {
 //deklarasi variable
   final _formKey = GlobalKey<FormState>();
 
@@ -174,8 +175,12 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void cekValidasi() {
+  Future<void> cekValidasi() async {
     if (_formKey.currentState!.validate()) {
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      preferences.setBool("login", true);
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text("Proses data....")));
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => BerandaPage()));
     }

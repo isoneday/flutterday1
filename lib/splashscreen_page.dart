@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:my_first_flutterapp/home_page.dart';
+import 'package:my_first_flutterapp/beranda_page.dart';
+import 'package:my_first_flutterapp/login_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({Key? key}) : super(key: key);
@@ -56,10 +58,18 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
 
   setLoading() {
     var duration = const Duration(seconds: 5);
-    return Timer(duration, () {
-      //untuk perpindahan halaman
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+    return Timer(duration, () async {
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      bool login = preferences.getBool("login") ?? false;
+      if (login) {
+        //untuk perpindahan halaman
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => BerandaPage()));
+      } else {
+        //untuk perpindahan halaman
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => LoginPage()));
+      }
     });
   }
 }
