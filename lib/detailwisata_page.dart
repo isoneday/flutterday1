@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_flutterapp/model/wisata_model.dart';
+import 'package:my_first_flutterapp/webwisata_page.dart';
 
 class DetailWisataPage extends StatelessWidget {
   WisataModel? wisataDetail;
@@ -10,6 +11,18 @@ class DetailWisataPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(wisataDetail?.namaWisata ?? "-"),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => WebWisataPage(
+                              wisata: wisataDetail,
+                            )));
+              },
+              icon: const Icon(Icons.open_in_browser))
+        ],
       ),
       body: Column(
         children: [
@@ -22,6 +35,10 @@ class DetailWisataPage extends StatelessWidget {
           Text(
             wisataDetail?.namaWisata ?? "-",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "Alamat : ${wisataDetail?.alamatWisata}",
+            style: const TextStyle(fontSize: 18),
           )
         ],
       ),

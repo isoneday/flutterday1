@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:my_first_flutterapp/camera_page.dart';
 import 'package:my_first_flutterapp/gridwisata_page.dart';
 import 'package:my_first_flutterapp/listwisata_page.dart';
+import 'package:my_first_flutterapp/login_page.dart';
 import 'package:my_first_flutterapp/whatsapp_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class BerandaPage extends StatelessWidget {
   const BerandaPage({Key? key}) : super(key: key);
@@ -12,6 +14,13 @@ class BerandaPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text("Beranda"),
+          actions: [
+            IconButton(
+                onPressed: () async {
+                  tampilAlert(context);
+                },
+                icon: const Icon(Icons.logout))
+          ],
         ),
         body: Column(
           children: [
@@ -68,5 +77,35 @@ class BerandaPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void tampilAlert(BuildContext context) {
+    Widget cancel = TextButton(
+        onPressed: () {
+          //kembali kehalaman sebelumnya
+          Navigator.pop(context);
+        },
+        child: const Text("Cancel"));
+
+    Widget yes = TextButton(
+        onPressed: () async {
+          SharedPreferences preferences = await SharedPreferences.getInstance();
+          preferences.clear();
+          //pindah ke halaman login setelah logout
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const LoginPage()));
+        },
+        child: const Text("Yes"));
+
+    AlertDialog alert = AlertDialog(
+      title: const Text("Keluar Aplikasi"),
+      content: const Text("Apakah anda yakin keluar aplikasi ?"),
+      actions: [cancel, yes],
+    );
+    showDialog(
+        context: context,
+        builder: (context) {
+          return alert;
+        });
   }
 }
