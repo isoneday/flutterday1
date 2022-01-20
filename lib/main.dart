@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_flutterapp/splashscreen_page.dart';
 
-import 'login_page.dart';
+import 'pages/splashscreen_page.dart';
 
 void main() {
   runApp(const MyApp());

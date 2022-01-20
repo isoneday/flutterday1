@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_flutterapp/model/wisata_model.dart';
-import 'package:my_first_flutterapp/webwisata_page.dart';
+import 'webwisata_page.dart';
 
 class DetailWisataPage extends StatelessWidget {
   WisataModel? wisataDetail;

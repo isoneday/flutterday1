@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:my_first_flutterapp/beranda_page.dart';
-import 'package:my_first_flutterapp/login_page.dart';
+import 'beranda_page.dart';
+import 'login_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreenPage extends StatefulWidget {

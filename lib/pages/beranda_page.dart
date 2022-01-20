@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_flutterapp/camera_page.dart';
-import 'package:my_first_flutterapp/gridwisata_page.dart';
-import 'package:my_first_flutterapp/listwisata_page.dart';
-import 'package:my_first_flutterapp/login_page.dart';
-import 'package:my_first_flutterapp/whatsapp_page.dart';
+ 
+import 'package:my_first_flutterapp/pages/whatsapp_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'camera_page.dart';
+import 'gridwisata_page.dart';
+import 'listwisata_page.dart';
+import 'login_page.dart';
 
 class BerandaPage extends StatelessWidget {
   const BerandaPage({Key? key}) : super(key: key);
