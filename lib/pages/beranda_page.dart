@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
- 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:my_first_flutterapp/pages/whatsapp_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,7 +22,10 @@ class BerandaPage extends StatelessWidget {
                 onPressed: () async {
                   tampilAlert(context);
                 },
-                icon: const Icon(Icons.logout))
+                icon: const Icon(
+                  FontAwesomeIcons.signOutAlt,
+                  color: Colors.white,
+                ))
           ],
         ),
         body: Column(

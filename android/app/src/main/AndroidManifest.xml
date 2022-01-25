@@ -3,7 +3,7 @@
    <application
         android:label="Aplikasi Flutter"
         android:name="${applicationName}"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/logoapp">
         <activity
             android:name=".MainActivity"
             android:exported="true"
