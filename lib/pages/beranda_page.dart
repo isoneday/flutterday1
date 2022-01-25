@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_first_flutterapp/pages/berita_page.dart';
 
 import 'package:my_first_flutterapp/pages/whatsapp_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -46,6 +47,16 @@ class BerandaPage extends StatelessWidget {
                   tampilanMenu(Colors.amber[800], "assets/gambar/logoina.png",
                       "Camera", context, const CameraPage()),
                   tampilanMenu(Colors.red[900], "assets/gambar/logoina.png",
+                      "WhatsApp", context, const WhatsAppPage())
+                ],
+              ),
+            ),
+            Flexible(
+              child: Row(
+                children: [
+                  tampilanMenu(Colors.red[900], "assets/gambar/logoina.png",
+                      "Berita", context, const BeritaPage()),
+                  tampilanMenu(Colors.amber[800], "assets/gambar/logoina.png",
                       "WhatsApp", context, const WhatsAppPage())
                 ],
               ),

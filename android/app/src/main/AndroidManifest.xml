@@ -2,7 +2,6 @@
     package="com.inatechno.aplikasiflutter">
    <application
         android:label="Aplikasi Flutter"
-        android:name="${applicationName}"
         android:icon="@mipmap/logoapp">
         <activity
             android:name=".MainActivity"
